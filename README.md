@@ -1,13 +1,14 @@
 # product-de-bring-your-own-datacenter
 
 ### problem description:
-you have a distributed architecture of you point of sale system and therefore you are not able to connect a tse device directly at you pos-terminal. a on site installation of the fiskaltrust.Middleware is not possible or or would not be efficient to solve.
+You have a distributed architecture of your point of sale system and therefore you are not able to connect a tse device directly to your pos-terminal. An on site (branchoffice) installation of the fiskaltrust.Middleware is not possible or would not be efficient.
 
 ### solution proposal:
-by providing a standardized hardware platform by the customer, fiskaltrust.Middleware using a cloud-tse can be directly brought to the datatcenter where the receipt generation process of a distributed point of sale system.
+By providing a standardized hardware platform by the customer, fiskaltrust.Middleware using a cloud-tse can be brought to the datatcenter directly where the receipt generation process of a distributed point of sale system occurs. This can be devlivered by a predefined Kubernetes Namespace which can be deployed by a Helm-Chart.
+fiskaltrust provides a "Backend POD" Docker image and Helm-Charts to deploy your own envoironment.
 
 ## Architecture Overview
-
+![Architecture Overview](images/fiskaltrust-ByoDC-Architecture-Overview.png)
 
 ## Requirements
 
