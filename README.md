@@ -1,9 +1,9 @@
 # product-de-bring-your-own-datacenter
 
-### problem description:
+### Problem description:
 You have a distributed architecture of your point of sale system and therefore you are not able to connect a tse device directly to your pos-terminal. An on site (branchoffice) installation of the fiskaltrust.Middleware is not possible or would not be efficient.
 
-### solution proposal:
+### Solution proposal:
 By providing a standardized hardware platform by the customer, fiskaltrust.Middleware using a cloud-tse can be brought to the datatcenter directly where the receipt generation process of a distributed point of sale system occurs. This can be devlivered by a predefined Kubernetes Namespace which can be deployed by a Helm-Chart.
 fiskaltrust provides a "Backend POD" Docker image and Helm-Charts to deploy your own envoironment.
 
@@ -15,6 +15,8 @@ fiskaltrust provides a "Backend POD" Docker image and Helm-Charts to deploy your
 * Kubernetes cluster > v1.16
 * helm > v3.0
 
+## Quickstart
+A brief step-by-step guide to get ByoDC up and running on your Docker Desktop can be found [here](QuickStart.md) 
 
 ## Installation
 
@@ -33,6 +35,11 @@ First add the fiskaltrust helm repository.
 ```sh
 helm repo add fiskaltrust https://charts.fiskaltrust.cloud/
 ```
+Update helm repository
+```sh
+helm repo update
+```
+
 
 > ***Note:** You can also skip this step, clone this repo and use the path to the `Chart.yaml` file as repo in the following commands.*
 
@@ -65,3 +72,6 @@ Leave out `-f config.yaml` to install it with default values.
 helm uninstall bring-your-own-datacenter --namespace bring-your-own-datacenter
 kubectl delete namespace bring-your-own-datacenter
 ```
+
+## Parameter Reference
+All Parameters and values you can use in "values.yaml" can be found [here](ParameterReference.md)
