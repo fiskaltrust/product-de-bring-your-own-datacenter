@@ -5,6 +5,8 @@ All settings in our helm-chart can be overruled by creating your own values.yaml
 
 The following settings are valid:
 
+<br>
+
 ## Section "signaturcloud"
 
 | Subsection | Parameter | Default Value | Description |
@@ -24,3 +26,34 @@ The following settings are valid:
 | config | timeout/all | 0 |  |
 | config | timeout/connect | 15_000 |  |
 |  |  |  |  |
+
+<br><br>
+
+## Section "redis"
+
+| Subsection | Parameter | Default Value | Description |
+| :----- | :----- | :------: | :-----------: |
+| install |  | true | Install Redis POD for BackendPOD Syncronization (Not needed if you provide Redis outside the kubernetes custer) |
+
+<br><br>
+
+## Section "ambassador"
+
+| Subsection | Parameter | Default Value | Description |
+| :----- | :----- | :------: | :-----------: |
+| install |  | true | Install Ambassador PODs for Loadbalancing|
+| config | tls/enabled | false |  |
+| config | tls/crtBase64 | null |  |
+| config | tls/Keybasa64 | null |  |
+| config | tls/crt | null |  |
+| config | tls/key | null |  |
+| config | hostname | * |  |
+| replicaCount |  | 2 | Count of redundant PODs |
+
+<br><br>
+
+## Section "mysql"
+
+| Subsection | Parameter | Default Value | Description |
+| :----- | :----- | :------: | :-----------: |
+| install |  | false | Install MySQL POD for MiddlewareStorage (For DEV purposes only, not recommended in production) |

@@ -14,6 +14,7 @@ fiskaltrust provides a "Backend POD" Docker image and Helm-Charts to deploy your
 
 * Kubernetes cluster > v1.16
 * helm > v3.0
+* Network Connection Matrix and used IP Scopes can be found at [Network Requirements](NetworkRequirements.md)
 
 ## Quickstart
 A brief step-by-step guide to get ByoDC up and running on your Docker Desktop can be found [here](QuickStart.md) 
@@ -75,3 +76,4 @@ kubectl delete namespace bring-your-own-datacenter
 
 ## Parameter Reference
 All Parameters and values you can use in "values.yaml" can be found [here](ParameterReference.md)
+
