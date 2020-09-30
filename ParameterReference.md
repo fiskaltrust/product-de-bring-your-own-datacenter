@@ -32,7 +32,7 @@ The following settings are valid:
 
 | Subsection | Parameter | Default Value | Description |
 | :----- | :----- | :------: | :-----------: |
-| enable |  | true | Deploy Redis POD for BackendPOD Syncronization (Not needed if you provide Redis outside the kubernetes custer) |
+| enabled |  | true | Deploy Redis POD for BackendPOD Syncronization (Not needed if you provide Redis outside the kubernetes custer) |
 
 <br><br>
 
