@@ -3,8 +3,20 @@
 
 This document includes a step-by-step manual to run fiskaltrust ByoDC.
 
-## Requirements
+### Requirements
 - Docker Desktop (including Kubernetes activated)
-- Helm >3.0 installed
+![](images/.png)
 
-## 1.) 
+## 1.) Install Helm
+See [Helm documentation](https://helm.sh/docs/intro/install/)
+
+## 2.) Create Kubernetes Namespace
+![](images/.png)
+
+## 3.) Add Helm Repo
+
+## 4.) Install HelmChart
+
+## 5.) Test in Browser
+
+## 6.) Test with Postman

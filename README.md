@@ -5,7 +5,7 @@ You have a distributed architecture of your point of sale system and therefore y
 
 ### Solution proposal:
 By providing a standardized hardware platform by the customer, fiskaltrust.Middleware using a cloud-tse can be brought to the datatcenter directly where the receipt generation process of a distributed point of sale system occurs. This can be devlivered by a predefined Kubernetes Namespace which can be deployed by a Helm-Chart.
-fiskaltrust provides a "Backend POD" Docker image and Helm-Charts to deploy your own envoironment.
+fiskaltrust provides a "Backend POD" Docker image and Helm-Charts to deploy your own environment.
 
 ## Architecture Overview
 ![Architecture Overview](images/fiskaltrust-ByoDC-Architecture-Overview.png)
