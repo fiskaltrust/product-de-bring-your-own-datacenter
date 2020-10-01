@@ -11,7 +11,7 @@ The following settings are valid:
 
 | Subsection | Parameter | Default Value | Description |
 | :----- | :----- | :------: | :-----------: |
-| image | name | docker.pkg.github.com/fiskaltrust/product-de-bring-your-own-datacenter/byodc-mysql-fiskaly | URI of container image which is used as BackendPOD. This URI is preset to fiskaltrust github packges registry|
+| image | name | ghcr.io/fiskaltrust/byodc-mysql-fiskaly | URI of container image which is used as BackendPOD. This URI is preset to fiskaltrust github packges registry|
 | image | tag | null | override default version of the byod POD |
 | image | pullsecret | false | ByoDC is public available so the container registry can be usend without authentication |
 | config | redis/host | redis | Hostname for Redis instance (Must be DNS resolvable. By default the redis instance runs as POD on the same cluster so  cluster-resolution should work) |
