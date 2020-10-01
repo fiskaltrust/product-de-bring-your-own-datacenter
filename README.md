@@ -1,4 +1,4 @@
-# product-de-bring-your-own-datacenter
+# fiskaltrust.Middleware - Bring your own Data Center
 
 ### Problem description:
 You have a distributed architecture of your point of sale system and therefore you are not able to connect a tse device directly to your pos-terminal. An on site (branchoffice) installation of the fiskaltrust.Middleware is not possible or would not be efficient.
