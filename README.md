@@ -77,3 +77,5 @@ kubectl delete namespace bring-your-own-datacenter
 ## Parameter Reference
 All Parameters and values you can use in "values.yaml" can be found [here](ParameterReference.md)
 
+## HTTPS Reference
+How to deal with SSL Certificates on the Ambassador endpoint can be found [here](HTTPSReference.md)
