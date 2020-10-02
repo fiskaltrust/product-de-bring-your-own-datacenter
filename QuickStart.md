@@ -1,11 +1,11 @@
 ### fiskaltrust "Bring your own Datacenter"
 # Quickstart
 
-This document includes a step-by-step manual to run fiskaltrust ByoDC local on Docker Desktop to get up and running.
+This document includes a step-by-step manual to run fiskaltrust ByoDC local on Docker Desktop for testing purposes.
 
 ### Requirements
 - Docker Desktop (including Kubernetes activated)
-![](images/.png)
+![](images/ByoDC-Quickstart-0-DockerConfig.png)
 
 ## 1.) Install Helm
 See [Helm documentation](https://helm.sh/docs/intro/install/)
@@ -38,9 +38,18 @@ http://localhost/api/version
 Create Cashbox and Queue Config (See [fiskaltrust Documentation](https://docs.fiskaltrust.cloud/doc/portal-manual-doc/doc/handbook-general/configuration.html))
 
 ![](images/ByoDC-Quickstart-5-CashboxConfig.png)
+
+Insert your mysql Connectionstring into the Queue  
+(f.i. Server=mysql;Port=3306;Uid=root;Pwd=password;)
 ![](images/ByoDC-Quickstart-6-QueueConfig.png)
 
+After changing values inside the cashbox, don't forget to rebuild the cashbox configuration!
+
 ## 6.) Test with Postman
-Start Postman and import the test [collection](fiskaltrust DE ByoDC TestCall.postman_collection)
+Start Postman and import the test [collection](https://github.com/fiskaltrust/product-de-bring-your-own-datacenter/blob/master/fiskaltrust%20DE%20ByoDC%20TestCall.postman_collection.json).
+
+Edit the collection and set the cashbox_id and accesstoken from the fiskaltrust portal.
 ![](images/ByoDC-Quickstart-7-PostmanCollection.png)
+
+Send a testrequest
 ![](images/ByoDC-Quickstart-8-PostmanResponse.png)
