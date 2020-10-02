@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "baa41487-373c-41d0-9782-e58b5c878ad9",
+		"name": "fiskaltrust DE ByoDC TestCall",
+		"description": "Sample requests that demonstrate how to access ByoDC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ByoDC Barumsatz",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "cashboxid",
+						"value": "{{cashbox_id}}",
+						"type": "text"
+					},
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ftCashBoxID\": \"{{cashbox_id}}\",\r\n    \"cbTerminalID\": \"1\",\r\n    \"cbReceiptReference\": \"1\",\r\n    \"cbReceiptMoment\": \"2020-05-02T13:16:54.5231251Z\",\r\n    \"cbChargeItems\": [\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Artikel 1\",\r\n            \"Amount\": 33.06,\r\n            \"VATRate\": 20.0,\r\n            \"ftChargeItemCase\": 4707387510509010944,\r\n            \"ftChargeItemCaseData\": \"\",\r\n            \"AccountNumber\": \"\",\r\n            \"CostCenter\": \"\",\r\n            \"ProductGroup\": \"\",\r\n            \"ProductNumber\": \"1\",\r\n            \"ProductBarcode\": \"\",\r\n            \"Unit\": \"\"\r\n        },\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Artikel 2\",\r\n            \"Amount\": 5.69,\r\n            \"VATRate\": 20.0,\r\n            \"ftChargeItemCase\": 4707387510509010944,\r\n            \"ftChargeItemCaseData\": \"\",\r\n            \"AccountNumber\": \"\",\r\n            \"CostCenter\": \"\",\r\n            \"ProductGroup\": \"\",\r\n            \"ProductNumber\": \"2\",\r\n            \"ProductBarcode\": \"\",\r\n            \"Unit\": \"\"\r\n        }\r\n    ],\r\n    \"cbPayItems\": [\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Bar\",\r\n            \"Amount\": 38.75,\r\n            \"ftPayItemCase\": 4707387510509010944,\r\n            \"ftPayItemCaseData\": \"\",\r\n            \"AccountNumber\": \"\",\r\n            \"CostCenter\": \"\",\r\n            \"MoneyGroup\": \"\",\r\n            \"MoneyNumber\": \"\"\r\n        }\r\n    ],\r\n    \"ftReceiptCase\": 4707387510509010944\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Sign",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Sign"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "edd4ae9f-de97-453b-8381-777c51060c8a",
+				"type": "text/javascript",
+				"exec": [
+					"const dateNow= new Date();",
+					"pm.environment.set('current_moment', dateNow.toISOString());"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "eac452fc-b501-4162-9a8f-d2a4db916888",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c75abeb5-8d45-4805-aff9-1a9b62364adc",
+			"key": "base_url",
+			"value": "http://localhost:80"
+		},
+		{
+			"id": "de741add-81cf-4cde-9d3a-b52a41b67d03",
+			"key": "data_format",
+			"value": "json"
+		},
+		{
+			"id": "9d22d0e4-478c-41cc-b6b1-87f03db29cf7",
+			"key": "cashbox_id",
+			"value": "00000000-0000-0000-0000-000000000000"
+		},
+		{
+			"id": "feca32cf-d5aa-46bb-853c-2a004a03b058",
+			"key": "accesstoken",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
