@@ -81,6 +81,6 @@ All Parameters and values you can use in "values.yaml" can be found [here](Param
 How to deal with SSL Certificates on the Ambassador endpoint can be found [here](HTTPSReference.md)
 
 ## API Reference
-ByoDC uses [swagger](https://swagger.io/) to provide [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md) service definitions of the provided API.
+ByoDC uses [swagger](https://swagger.io/) to provide [OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md) service definitions of the exposed API.
 
 The API Explorer can be found at the `/swagger` endpoint and the OpenAPI definition at `/swagger/v1/swagger.json`.
