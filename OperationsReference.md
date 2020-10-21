@@ -15,3 +15,9 @@ By passing CashboxID and Accesstoken, the Cashbox does a immedeate reset and rel
 
 See our [Postmancollection](https://github.com/fiskaltrust/product-de-bring-your-own-datacenter/blob/master/fiskaltrust%20DE%20ByoDC%20TestCall.postman_collection.json) for an example call:
 ![](images/fiskaltrust-ByoDC-Echo-Postman.png)
+
+## LogFiles
+fiskaltrust Middleware in ByoDC does not support local Logfiles.  
+Usual logging practice in K8S environments is to handle logs via stdout/stderr.
+https://kubernetes.io/docs/concepts/cluster-administration/logging/#cluster-level-logging-architectures
+
