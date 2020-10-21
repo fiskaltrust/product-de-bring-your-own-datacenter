@@ -1,6 +1,6 @@
 ---
 name: General Question
-about: Describe this issue template's purpose here.
+about: Ask Questions about ByoDC here.
 title: ''
 labels: question
 assignees: ''
