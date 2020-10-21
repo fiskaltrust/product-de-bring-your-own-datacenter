@@ -36,7 +36,7 @@ helm install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --na
 
 If you would like to have a mysql container for easy testing, you can add a config setting before installing the HelmChart as follows:
 
-1.  create a ```config.yaml``` file and add following content:
+1.  Create a ```config.yaml``` file and add following content:
 ```
 ambassador:
   config:
@@ -45,7 +45,7 @@ ambassador:
 mysql:
   enabled: true
 ```
-2. pass the created  ```config.yaml``` file with the helm install command:
+2. Pass the created  ```config.yaml``` file with the helm install command:
 
 ```sh
 helm install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --namespace bring-your-own-datacenter -f config.yaml
@@ -71,7 +71,7 @@ http://localhost/api/version
 
 - add a htp(REST) endpoint by clicking the corresponding button
 
-- Press "Save" and in the next form insert your mysql Connectionstring:
+- press "Save" and in the next form insert your mysql Connectionstring:
 
   (e.g. Server=mysql;Port=3306;Uid=root;Pwd=password;)
   ![](images/ByoDC-Quickstart-6-QueueConfig.png)
@@ -80,7 +80,7 @@ http://localhost/api/version
 
 6.2 ) Next create a new SCU 
 
-- For testing you can use a fiskaly TSE.  To obtain the TSE access data, register in the [fiskaly dashboard](https://dashboard.fiskaly.com/) and create there a test TSE. 
+- for testing you can use a fiskaly TSE.  To obtain the TSE access data, register in the [fiskaly dashboard](https://dashboard.fiskaly.com/) and create there a test TSE. 
 - create the new SCU in the portal and choose the Package ```fiskaltrust.Middleware.SCU.DE.Fiskaly```
 - press "Save" and next enter the TSE credentials received from the fiskaly dashboard.
 - create a grpc endpoint by pressing the corresponding button. 
