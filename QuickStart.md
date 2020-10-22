@@ -100,7 +100,7 @@ After changing values inside the cashbox (including Queue and SCU), don't forget
 
 ## 7.) Test with Postman
 
-7.1) Start our ByoDC test collection directly from here: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/4cc81f9afe8e40d93883)
+7.1) Start our ByoDC test collection directly from here: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/f25ba9a9c934a6e997ec)
 
  or start Postman, download and import the [ByoDC test collection](https://github.com/fiskaltrust/product-de-bring-your-own-datacenter/blob/master/fiskaltrust%20DE%20ByoDC%20TestCall.postman_collection.json).
 

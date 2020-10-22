@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3ecc8c5f-d19c-4013-831b-8413ff5a62d4",
+		"_postman_id": "f4877cbd-0aa1-4b01-a14b-9e4ebc872d17",
 		"name": "fiskaltrust DE ByoDC TestCall",
 		"description": "Sample requests that demonstrate how to access ByoDC",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -49,7 +49,18 @@
 			"name": "2. Initial Operation Receipt",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "cashboxid",
+						"value": "{{cashbox_id}}",
+						"type": "text"
+					},
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n \"ftCashBoxID\": \"{{cashbox_id}}\",\r\n \"cbTerminalID\": \"101\",\r\n \"cbReceiptReference\": \"INIT\",\r\n \"cbReceiptMoment\": \"{{current_moment}}\",\r\n \"cbChargeItems\": [],\r\n \"cbPayItems\": [],\r\n \"ftReceiptCase\": 4919338172267102211,\r\n \"cbUser\": \"Admin\"\r\n}\r\n\r\n",
@@ -92,7 +103,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"ftCashBoxID\": \"{{cashbox_id}}\",\r\n    \"cbTerminalID\": \"1\",\r\n    \"cbReceiptReference\": \"VORGANG-1020\",\r\n    \"cbReceiptMoment\": \"{{current_moment}}\",\r\n    \"cbChargeItems\": [\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Artikel 1\",\r\n            \"Amount\": 33.06,\r\n            \"VATRate\": 16.0,\r\n            \"ftChargeItemCase\": 4919338167972134913,\r\n            \"Moment\":\"{{current_moment}}\"\r\n        },\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Artikel 2\",\r\n            \"Amount\": 5.69,\r\n            \"VATRate\": 16.0,\r\n            \"ftChargeItemCase\": 4919338167972134913,\r\n            \"Moment\":\"{{current_moment}}\"\r\n        }\r\n    ],\r\n    \"cbPayItems\": [\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Bar\",\r\n            \"Amount\": 38.75,\r\n            \"ftPayItemCase\": 4919338167972134913,\r\n            \"Moment\":\"{{current_moment}}\"\r\n        }\r\n    ],\r\n    \"ftReceiptCase\": 4919338172267102209\r\n}",
+					"raw": "{\r\n    \"ftCashBoxID\": \"{{cashbox_id}}\",\r\n    \"cbTerminalID\": \"1\",\r\n    \"cbReceiptReference\": \"VORGANG-1050\",\r\n    \"cbReceiptMoment\": \"{{current_moment}}\",\r\n    \"cbChargeItems\": [\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Artikel 1\",\r\n            \"Amount\": 33.06,\r\n            \"VATRate\": 16.0,\r\n            \"ftChargeItemCase\": 4919338167972134913,\r\n            \"Moment\":\"{{current_moment}}\"\r\n        },\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Artikel 2\",\r\n            \"Amount\": 5.69,\r\n            \"VATRate\": 16.0,\r\n            \"ftChargeItemCase\": 4919338167972134913,\r\n            \"Moment\":\"{{current_moment}}\"\r\n        }\r\n    ],\r\n    \"cbPayItems\": [\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Bar\",\r\n            \"Amount\": 38.75,\r\n            \"ftPayItemCase\": 4919338167972134913,\r\n            \"Moment\":\"{{current_moment}}\"\r\n        }\r\n    ],\r\n    \"ftReceiptCase\": 4919338172267102209\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -158,7 +169,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ad3b0ccc-0c76-4ae9-a5f5-6f8302d51e85",
+				"id": "1a81804f-78e1-45f9-bd88-5fbe753e383c",
 				"type": "text/javascript",
 				"exec": [
 					"const dateNow= new Date();",
@@ -169,7 +180,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "99dffec4-83a1-4e39-8d86-86d4825321ae",
+				"id": "777f0976-a2d3-4bd5-84b6-7df4a05f627b",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -179,22 +190,22 @@
 	],
 	"variable": [
 		{
-			"id": "ee393e8e-e6c0-4311-bf46-646842c38066",
+			"id": "4555826b-7dc6-4b0a-8eb0-6d4528da5d30",
 			"key": "base_url",
 			"value": "http://localhost:80"
 		},
 		{
-			"id": "3467d5bb-eeef-4930-a998-4582f950c069",
+			"id": "e7e50bfc-0863-43b6-bb8e-8b029b6fafa3",
 			"key": "data_format",
 			"value": "json"
 		},
 		{
-			"id": "a8796fe5-c352-424b-a915-e8b026f372e1",
+			"id": "3df461bd-3e84-4f59-a05d-811befeacece",
 			"key": "cashbox_id",
 			"value": "00000000-0000-0000-0000-000000000000"
 		},
 		{
-			"id": "134d7271-3ed5-4a15-a51f-382b764edc87",
+			"id": "0b98835f-a168-409e-857d-4518acc676b3",
 			"key": "accesstoken",
 			"value": ""
 		}
