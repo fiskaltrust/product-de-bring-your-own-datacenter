@@ -69,9 +69,8 @@ http://localhost/api/version
 
 - insert a value for the ```CashboxIdentification``` field - this will be used as the POS System serial number (Kassenseriennummer) and as a client id in the TSE. It must be a [printable string](https://en.wikipedia.org/wiki/PrintableString) with a maximum length of 20 characters.
 
-- add a htp(REST) endpoint by clicking the corresponding button
-
 - press "Save" and in the next form insert your mysql Connectionstring:
+- add a http(REST) endpoint by clicking the corresponding button
 
   (e.g. Server=mysql;Port=3306;Uid=root;Pwd=password;)
   ![](images/ByoDC-Quickstart-6-QueueConfig.png)
