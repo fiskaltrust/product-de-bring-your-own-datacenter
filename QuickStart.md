@@ -25,14 +25,14 @@ helm repo add fiskaltrust https://charts.fiskaltrust.cloud/
 
 ## 4.) Install HelmChart
 
-### Option 1 (plain, without mysql container)
+### Option 1 (existing MySQL Server needed)
 
 ```sh
 helm install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --namespace bring-your-own-datacenter
 ```
 ![](images/ByoDC-Quickstart-3-Install.png)
 
-### Option 2 (with mysql container)
+### Option 2 (including MySQL POD)
 
 If you would like to have a mysql container for easy testing, you can add a config setting before installing the HelmChart as follows:
 
@@ -50,7 +50,9 @@ mysql:
 ```sh
 helm install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --namespace bring-your-own-datacenter -f config.yaml
 ```
-This will additionally create a mysql container that you can use in Step 6.) when configuring the Queue for testing.
+This will additionally create a mysql container that you can use in Step 6.) when configuring the Queue for testing. 
+
+>**Attention:** Be aware that it is **not recommended** to use a MySQL single instance POD for production environments. This Setting is not included in the parameter reference and only for testing scenarios!
 
 ## 5.) Test reachability in the Browser
 
@@ -69,8 +71,8 @@ http://localhost/api/version
 
 - insert a value for the ```CashboxIdentification``` field - this will be used as the POS System serial number (Kassenseriennummer) and as a client id in the TSE. It must be a [printable string](https://en.wikipedia.org/wiki/PrintableString) with a maximum length of 20 characters.
 
-- press "Save" and in the next form insert your mysql Connectionstring:
-(e.g. Server=mysql;Port=3306;Uid=root;Pwd=password;)
+- press "Save" and in the next form insert your mysql Connectionstring:  
+(e.g. ```Server=mysql;Port=3306;Uid=root;Pwd=password;``` for Option 1 - MySQL POD)
 
 - add a http(REST) endpoint by clicking the corresponding button
 
