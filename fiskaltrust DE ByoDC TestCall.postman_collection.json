@@ -1,51 +1,13 @@
 {
 	"info": {
-		"_postman_id": "edd8d383-0ab4-453d-a0c7-354c7c114f68",
+		"_postman_id": "f4877cbd-0aa1-4b01-a14b-9e4ebc872d17",
 		"name": "fiskaltrust DE ByoDC TestCall",
 		"description": "Sample requests that demonstrate how to access ByoDC",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "ByoDC Barumsatz",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "cashboxid",
-						"value": "{{cashbox_id}}",
-						"type": "text"
-					},
-					{
-						"key": "accesstoken",
-						"value": "{{accesstoken}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"ftCashBoxID\": \"{{cashbox_id}}\",\r\n    \"cbTerminalID\": \"1\",\r\n    \"cbReceiptReference\": \"1\",\r\n    \"cbReceiptMoment\": \"2020-05-02T13:16:54.5231251Z\",\r\n    \"cbChargeItems\": [\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Artikel 1\",\r\n            \"Amount\": 33.06,\r\n            \"VATRate\": 20.0,\r\n            \"ftChargeItemCase\": 4707387510509010944,\r\n            \"ftChargeItemCaseData\": \"\",\r\n            \"AccountNumber\": \"\",\r\n            \"CostCenter\": \"\",\r\n            \"ProductGroup\": \"\",\r\n            \"ProductNumber\": \"1\",\r\n            \"ProductBarcode\": \"\",\r\n            \"Unit\": \"\"\r\n        },\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Artikel 2\",\r\n            \"Amount\": 5.69,\r\n            \"VATRate\": 20.0,\r\n            \"ftChargeItemCase\": 4707387510509010944,\r\n            \"ftChargeItemCaseData\": \"\",\r\n            \"AccountNumber\": \"\",\r\n            \"CostCenter\": \"\",\r\n            \"ProductGroup\": \"\",\r\n            \"ProductNumber\": \"2\",\r\n            \"ProductBarcode\": \"\",\r\n            \"Unit\": \"\"\r\n        }\r\n    ],\r\n    \"cbPayItems\": [\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Bar\",\r\n            \"Amount\": 38.75,\r\n            \"ftPayItemCase\": 4707387510509010944,\r\n            \"ftPayItemCaseData\": \"\",\r\n            \"AccountNumber\": \"\",\r\n            \"CostCenter\": \"\",\r\n            \"MoneyGroup\": \"\",\r\n            \"MoneyNumber\": \"\"\r\n        }\r\n    ],\r\n    \"ftReceiptCase\": 4707387510509010944\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{base_url}}/api/Sign",
-					"host": [
-						"{{base_url}}"
-					],
-					"path": [
-						"api",
-						"Sign"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Echo - Cashbox Restart",
+			"name": "1. Echo - Cashbox Restart",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -82,13 +44,132 @@
 				"description": "Restarts a Cashbox and reloads Config"
 			},
 			"response": []
+		},
+		{
+			"name": "2. Initial Operation Receipt",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "cashboxid",
+						"value": "{{cashbox_id}}",
+						"type": "text"
+					},
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"ftCashBoxID\": \"{{cashbox_id}}\",\r\n \"cbTerminalID\": \"101\",\r\n \"cbReceiptReference\": \"INIT\",\r\n \"cbReceiptMoment\": \"{{current_moment}}\",\r\n \"cbChargeItems\": [],\r\n \"cbPayItems\": [],\r\n \"ftReceiptCase\": 4919338172267102211,\r\n \"cbUser\": \"Admin\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/json/v1/Sign",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"json",
+						"v1",
+						"Sign"
+					]
+				},
+				"description": "Registers the client in the TSE (needed only once)"
+			},
+			"response": []
+		},
+		{
+			"name": "3. ByoDC Barumsatz",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "cashboxid",
+						"value": "{{cashbox_id}}",
+						"type": "text"
+					},
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ftCashBoxID\": \"{{cashbox_id}}\",\r\n    \"cbTerminalID\": \"1\",\r\n    \"cbReceiptReference\": \"VORGANG-1050\",\r\n    \"cbReceiptMoment\": \"{{current_moment}}\",\r\n    \"cbChargeItems\": [\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Artikel 1\",\r\n            \"Amount\": 33.06,\r\n            \"VATRate\": 16.0,\r\n            \"ftChargeItemCase\": 4919338167972134913,\r\n            \"Moment\":\"{{current_moment}}\"\r\n        },\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Artikel 2\",\r\n            \"Amount\": 5.69,\r\n            \"VATRate\": 16.0,\r\n            \"ftChargeItemCase\": 4919338167972134913,\r\n            \"Moment\":\"{{current_moment}}\"\r\n        }\r\n    ],\r\n    \"cbPayItems\": [\r\n        {\r\n            \"Quantity\": 1.0,\r\n            \"Description\": \"Bar\",\r\n            \"Amount\": 38.75,\r\n            \"ftPayItemCase\": 4919338167972134913,\r\n            \"Moment\":\"{{current_moment}}\"\r\n        }\r\n    ],\r\n    \"ftReceiptCase\": 4919338172267102209\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Sign",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Sign"
+					]
+				},
+				"description": "sends a pos-receipt with implicit flow"
+			},
+			"response": []
+		},
+		{
+			"name": "4. Zero Receipt (+ TSE Info)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "cashboxid",
+						"value": "{{cashbox_id}}",
+						"type": "text"
+					},
+					{
+						"key": "accesstoken",
+						"value": "{{accesstoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ftCashBoxID\": \"{{cashbox_id}}\",\r\n  \"cbTerminalID\": \"1\",\r\n  \"cbReceiptReference\": \"ZeroReceiptTSEInfo\",\r\n  \"cbReceiptMoment\": \"{{current_moment}}\",\r\n  \"cbChargeItems\": [],\r\n  \"cbPayItems\": [],\r\n  \"ftReceiptCase\": 4919338172275490818\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/json/v1/Sign",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"json",
+						"v1",
+						"Sign"
+					]
+				},
+				"description": "Flagged with 0x0000000000800000\n\nRequests additional informations from used TSE device."
+			},
+			"response": []
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "66d46084-fa39-48d1-8e0c-d3f2a492f305",
+				"id": "1a81804f-78e1-45f9-bd88-5fbe753e383c",
 				"type": "text/javascript",
 				"exec": [
 					"const dateNow= new Date();",
@@ -99,7 +180,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "bf4c0433-e4cc-4475-a674-3f9dd519c644",
+				"id": "777f0976-a2d3-4bd5-84b6-7df4a05f627b",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -109,22 +190,22 @@
 	],
 	"variable": [
 		{
-			"id": "dd47fef2-74ad-4744-89c6-a811387ad596",
+			"id": "4555826b-7dc6-4b0a-8eb0-6d4528da5d30",
 			"key": "base_url",
 			"value": "http://localhost:80"
 		},
 		{
-			"id": "a0ce6476-1f86-45d3-98e8-bb4bff6e0f39",
+			"id": "e7e50bfc-0863-43b6-bb8e-8b029b6fafa3",
 			"key": "data_format",
 			"value": "json"
 		},
 		{
-			"id": "b0accd65-3e1a-47d5-a8f0-bc0339b73dd4",
+			"id": "3df461bd-3e84-4f59-a05d-811befeacece",
 			"key": "cashbox_id",
 			"value": "00000000-0000-0000-0000-000000000000"
 		},
 		{
-			"id": "4ed2550f-abfe-4c99-9faa-69298f369f71",
+			"id": "0b98835f-a168-409e-857d-4518acc676b3",
 			"key": "accesstoken",
 			"value": ""
 		}
