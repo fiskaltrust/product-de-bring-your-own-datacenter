@@ -15,6 +15,10 @@ The following settings are valid:
 | image | tag | null | override default version of the byod POD |
 | image | pullsecret | false | ByoDC is public available so the container registry can be usend without authentication |
 | config | redis/host | redis | Hostname for Redis instance (Must be DNS resolvable. By default the redis instance runs as POD on the same cluster so  cluster-resolution should work) |
+| proxy | http | null | HTTP_PROXY value according to https://docs.docker.com/network/proxy/#set-the-environment-variables-manually |
+| proxy | https | null | HTTPS_PROXY value according to https://docs.docker.com/network/proxy/#set-the-environment-variables-manually |
+| proxy | no | null | NO_PROXY value according to https://docs.docker.com/network/proxy/#set-the-environment-variables-manually |
+| proxy | ftp | null | FTP_PROXY value according to https://docs.docker.com/network/proxy/#set-the-environment-variables-manually |
 | config | redis/port | 6379 | Port to access Redis instance |
 | config | redis/channel | byodc | Redis Pub/Sub channel which should be used. Take care to take 2 different channels if Producion and Sandbox environments are running on the same cluster! |
 | config | applicationInsights/instrumentationkey | null | Override Microsoft Application Insights Tenant. By default fiskaltrust Application Insights is used |
