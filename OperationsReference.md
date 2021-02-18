@@ -34,5 +34,11 @@ fiskaltrust Middleware in ByoDC does not support local Logfiles.
 Usual logging practice in K8S environments is to handle logs via stdout/stderr.
 https://kubernetes.io/docs/concepts/cluster-administration/logging/#cluster-level-logging-architectures
 
+## Replace Abassador Loadbalancer
+Ambassador PODs are the default Loadbalancers for ByoDC. There is an important reason for that. For Backend PODs to work properly, it is essential that every cashbox is a singleton on the whole ByoDC cluster.  
+So we use _Header based Routing_ by the CashBoxId. If a cashbox is already existing on a BackendPOD, the load balancer routes this request always to the same BackendPOD (like a sticky session). If this Cashbox is not existing it will be created and gains a Redis Lock. In this case the cashbox loads its config from helipad, this may take some time.
+
+**Attention:** Keep in mind, if you replace the ambassador PODs by another solution, that this behaviour is exact the same. Otherwise you may encounter unexpected timeouts and performance issues!  
+![Loadbalancer Behaviour](images/ByoDC-Loadbalancer.png)
 
 
