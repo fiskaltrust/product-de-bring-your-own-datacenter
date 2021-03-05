@@ -44,7 +44,8 @@ So we use _Header based Routing_ by the CashBoxId. If a cashbox is already exist
 ## Supported Rollout Scenarios
 In Contrast to the local installed middleware (ft-launcher), ByoDC supports only scenarios where each cashbox contains exact 1 Queue and 1 SCU.
 Figuratively, those parts of our rollout scenarios are included:
-https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/middleware#a-cloud-tse-for-multiple-cash-registers  
-https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/middleware#rollout-scenario-with-terminals  
+- https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/middleware#a-cloud-tse-for-multiple-cash-registers  
+- https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/middleware#rollout-scenario-with-terminals  
+ 
 All other documented scenarios are not applicable to ByoDC deployments.
 
