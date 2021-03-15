@@ -44,7 +44,11 @@ So we use _Header based Routing_ by the CashBoxId. If a cashbox is already exist
 ## Supported Rollout Scenarios
 In Contrast to the local installed middleware (ft-launcher), ByoDC supports only scenarios where each cashbox contains exact 1 Queue and 1 SCU.
 Figuratively, those parts of our rollout scenarios are included:
-- https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/middleware#a-cloud-tse-for-multiple-cash-registers  
+- https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/middleware#a-cloud-tse-for-multiple-cash-registers
+  <br>Keep in mind that you may use the SCU, which was created by Portal Checkout, for all Cashboxes (per Outlet). If templates were used, simply reference the SCU.<br>
+Endpoints should look like:<br>
+    - Queue: rest://localhost:1500/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+    - SCU: grpc://localhost:XXXX
 - https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/middleware#rollout-scenario-with-terminals  
  
 All other documented scenarios are not applicable to ByoDC deployments.
