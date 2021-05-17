@@ -53,3 +53,28 @@ Endpoints should look like:<br>
  
 All other documented scenarios are not applicable to ByoDC deployments.
 
+## Update of Cashboxes to newer Software Version
+fiskaltrust Middleware is constantly improving. Usually several days after a Middleware Release, ByoDC BackendPOD Container Image will be updated (also the HELM Chart if needed).  
+
+### Get current ByoDC BackendPOD Version
+TBD
+
+### Update Deployment
+
+To Update your ByoDC Environment, take the following steps:
+1. Helm Chart was updated  
+  Update your repo to get the actual charts:
+  `helm repo update`  
+  Upgrade your deployment:  
+  `helm upgrade byodc fiskaltrust/bring-your-own-datacenter -f config.yaml -n byodc`  
+  be aware that the variables may differ to your deployment
+
+2. BackendPOD Image was updated  
+  Restarting the deployment from our chart will pull the latest ByoDC BackendPOD Image:
+  `kubectl rollout restart deployment/byodc -n bring-your-own-datacenter`  
+  be aware that the variables may differ to your deployment
+
+3. Update Cashbox Versions in ft-portal   
+  To align the used Software Version to ft-Portal Configuration, our Update Wizard may be used: [Portal Configuration Update Site](https://portal.fiskaltrust.de/UpdateConfiguration)
+   
+
