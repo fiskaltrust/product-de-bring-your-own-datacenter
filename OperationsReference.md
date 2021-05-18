@@ -75,6 +75,7 @@ To Update your ByoDC Environment, take the following steps:
   be aware that the variables may differ to your deployment
 
 3. Update Cashbox Versions in ft-portal   
-  To align the used Software Version to ft-Portal Configuration, our Update Wizard may be used: [Portal Configuration Update Site](https://portal.fiskaltrust.de/UpdateConfiguration)
+  To align the used Software Version to ft-Portal Configuration, our Update Wizard may be used: [Portal Configuration Update Site](https://portal.fiskaltrust.de/UpdateConfiguration)  
+  A Description for Bulk updating Cashboxes can be found [here](https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/how-to/bulk-update-cashboxes) ("Restart the fiskaltrust.Middleware" section can be ignored)
    
 
