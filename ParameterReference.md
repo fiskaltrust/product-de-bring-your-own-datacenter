@@ -28,7 +28,7 @@ The following settings are valid:
 | config | limits/memory | 100Mi |  |
 | config | timeout/all | 0 | Ambassador timeout for the complete TCP transaction in ms (0...no timeout. See [Ambassador doc](https://www.getambassador.io/docs/latest/topics/using/timeouts/#request-timeout-timeout_ms) value "timeout_ms"|
 | config | timeout/connect | 15_000 | Ambassador timeout for the TCP connection esteblishment in ms. See [Ambassador doc](https://www.getambassador.io/docs/latest/topics/using/timeouts/#connect-timeout-connect_timeout_ms) value "connect_timeout_ms" |
-|  |  |  |  |
+|  config | env | null | An Array of environment variables (see https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#envvar-v1-core) which are added to the BackendPOD |
 
 <br><br>
 
