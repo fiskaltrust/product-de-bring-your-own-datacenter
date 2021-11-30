@@ -38,7 +38,7 @@ If you would like to have a mysql container for easy testing, you can add a conf
 
 1.  Create a ```config.yaml``` file and add following content:
 ```
-ambassador:
+loadbalancer:
   config:
     tls:
       enabled: false
