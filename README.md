@@ -70,7 +70,7 @@ Leave out `-f config.yaml` to install it with default values.
 
 ## Upadating
 
-Please see the [Migration Guide]() for update instructions of specific versions.
+Please see the [Migration Guide](https://github.com/fiskaltrust/helm-charts/blob/master/bring-your-own-datacenter/MIGRATION.md) for update instructions of specific versions.
 
 If the version is not listed in the Migration Guide you can update the chart like this:
 
