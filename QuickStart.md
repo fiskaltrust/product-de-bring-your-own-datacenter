@@ -30,6 +30,9 @@ helm repo add fiskaltrust https://charts.fiskaltrust.cloud/
 ```sh
 helm install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --namespace bring-your-own-datacenter
 ```
+
+> ***Note:** If you use a local repo you will have to run `helm dependency update` before installing.*
+
 ![](images/ByoDC-Quickstart-3-Install.png)
 
 ### Option 2 (including MySQL POD)
