@@ -26,8 +26,8 @@ The following settings are valid:
 | config | replicas | 10 | Number of BackendPODs which are deployed. See the "limits" section for calculation of needed noderesources and PODCount |
 | config | limits/cpu | 100m | See Kubernetes doc [here](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-units-in-kubernetes)  
 | config | limits/memory | 100Mi |  |
-| config | timeout/all | 0 | Ambassador timeout for the complete TCP transaction in ms (0...no timeout. See [Ambassador doc](https://www.getambassador.io/docs/latest/topics/using/timeouts/#request-timeout-timeout_ms) value "timeout_ms"|
-| config | timeout/connect | 15_000 | Ambassador timeout for the TCP connection esteblishment in ms. See [Ambassador doc](https://www.getambassador.io/docs/latest/topics/using/timeouts/#connect-timeout-connect_timeout_ms) value "connect_timeout_ms" |
+| config | timeout/all | 0 | Emissary-ingress timeout for the complete TCP transaction in ms (0...no timeout. See [Emissary-ingress docs](https://www.getambassador.io/docs/emissary/latest/topics/using/timeouts/#request-timeout-timeout_ms) value "timeout_ms"|
+| config | timeout/connect | 15_000 | Emissary-ingress timeout for the TCP connection esteblishment in ms. See [Emissary-ingress docs](https://www.getambassador.io/docs/emissary/latest/topics/using/timeouts/#connect-timeout-connect_timeout_ms) value "connect_timeout_ms" |
 |  config | env | null | An Array of environment variables (see https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#envvar-v1-core) which are added to the BackendPOD |
 
 <br><br>
@@ -40,16 +40,20 @@ The following settings are valid:
 
 <br><br>
 
-## Section "ambassador"
+## Section "loadbalancer"
 
 | Subsection | Parameter | Default Value | Description |
 | :----- | :----- | :------: | :-----------: |
-| install |  | true | Install Ambassador PODs for Loadbalancing as helm dependency|
 | config | tls/enabled | false |  |
-| config | tls/crtBase64 | null | [see Ambassador Doc](https://www.getambassador.io/docs/latest/howtos/tls-termination/#create-a-self-signed-certificate) for information about `cert` and `key` files. You can use `--set-file ambassador.config.tls.crt="./cert.pem"` to pass files to the helm command. Please make sure the files start with `-----BEGIN [...]`. The cert file may also contain intermediate certificates |
+| config | tls/crtBase64 | null | [see Emissary-ingress docs](https://www.getambassador.io/docs/emissary/latest/howtos/tls-termination/#create-a-self-signed-certificate) for information about `cert` and `key` files. You can use `--set-file ambassador.config.tls.crt="./cert.pem"` to pass files to the helm command. Please make sure the files start with `-----BEGIN [...]`. The cert file may also contain intermediate certificates |
 | config | tls/Keybase64 | null | Keyfile in Base64 String |
 | config | tls/crt | null | CertFile content (string) not encoded |
 | config | tls/key | null | KeyFile content (string) not encoded |
 | config | hostname | * | HTTPS-Binding hostname |
-| replicaCount |  | 2 | Count of redundant PODs |
 
+## Section "emissary-ingress"
+
+| Subsection | Parameter | Default Value | Description |
+| :----- | :----- | :------: | :-----------: |
+| install |  | true | Install Emissary-ingress PODs for Loadbalancing as helm dependency|
+| replicaCount |  | 2 | Count of redundant PODs |

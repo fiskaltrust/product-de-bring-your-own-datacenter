@@ -68,6 +68,16 @@ Leave out `-f config.yaml` to install it with default values.
 
 > ***Note:** If you use a local repo you will have to run `helm dependency update` before installing.*
 
+## Updating
+
+Please see the [Migration Guide](https://github.com/fiskaltrust/helm-charts/blob/master/bring-your-own-datacenter/MIGRATION.md) for update instructions of specific versions.
+
+If the version is not listed in the Migration Guide you can update the chart like this:
+
+```sh
+helm repo update
+helm upgrade --install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --namespace bring-your-own-datacenter -f config.yaml
+```
 
 ## Uninstallation
 
