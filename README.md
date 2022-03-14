@@ -79,6 +79,8 @@ helm repo update
 helm upgrade --install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --namespace bring-your-own-datacenter -f config.yaml
 ```
 
+> ***Note:** The backend Pods will automatically update to the newest minor Middleware version. If this behaviour is not wanted you can set the [`byodc.image.tag` Parameter](./ParameterReference.md#section-byodc) in your `config.yaml` to a specific version (e.g. `1.3.29-buster`).
+
 ## Uninstallation
 
 ```sh
