@@ -57,7 +57,8 @@ All other documented scenarios are not applicable to ByoDC deployments.
 fiskaltrust Middleware is constantly improving. Usually several days after a Middleware Release, ByoDC BackendPOD Container Image will be updated (also the HELM Chart if needed).  
 
 ### Get current ByoDC BackendPOD Version
-TBD
+
+You can call the `/api/version` endpoint on a BackendPOD to get the running Middleware version. 
 
 ### Update Deployment
 
@@ -70,11 +71,12 @@ To Update your ByoDC Environment, take the following steps:
   be aware that the variables may differ to your deployment
 
 2. BackendPOD Image was updated  
-  Restarting the deployment from our chart will pull the latest ByoDC BackendPOD Image:
+  Restarting the deployment from our chart will pull the latest ByoDC BackendPOD Image with a compatible minor version:
   `kubectl rollout restart deployment/byodc -n bring-your-own-datacenter`  
-  be aware that the variables may differ to your deployment
+  be aware that the variables may differ to your deployment  
+  > ***Note:** You can override this by setting the [`byodc.image.tag` Parameter](./ParameterReference.md#section-byodc) in your `config.yaml` to a specific version (e.g. `1.3.29-buster`).
 
-3. Update Cashbox Versions in ft-portal   
+3. Update Cashbox Versions in ft-portal *(Optional)*  
   To align the used Software Version to ft-Portal Configuration, our Update Wizard may be used: [Portal Configuration Update Site](https://portal.fiskaltrust.de/UpdateConfiguration)  
   A Description for Bulk updating Cashboxes can be found [here](https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/how-to/bulk-update-cashboxes) ("Restart the fiskaltrust.Middleware" section can be ignored)
    
