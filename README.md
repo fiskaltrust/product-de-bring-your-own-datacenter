@@ -101,3 +101,6 @@ The API Explorer can be found at the `/swagger` endpoint and the OpenAPI definit
 
 ## Operations Reference
 Collection of OPS related topics and QnAs [here](OperationsReference.md)
+
+## Minimal installations
+In scenarios where only very few CashBoxes are operated and high availability is not a crucial factor, it's also possible to host a standalone instance of the BYODC container. More details can be found [here](howto-single-instance.md).
