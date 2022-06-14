@@ -6,7 +6,7 @@ In scenarios where only a very small number of users need to connect to BYODC, a
 > Please note that this scenario introduces a _single point of failure_, as there are no redudancies in place. We recommend to use the full Kuberentes depoloyment in scenarios that require high-availability.
 
 ## Setup guide
-The exact guides of setting up BYODC in a single container depend on the respective hosting provider. However, the important key facts are always similar:
+The exact steps of setting up BYODC in a single container depend on the respective hosting provider. However, the important key facts are always similar:
 1. The **Docker image** is hosted on our public [GH container registry](https://github.com/fiskaltrust/product-de-bring-your-own-datacenter/pkgs/container/byodc), the latest version can be obtained as `ghcr.io/fiskaltrust/byodc:latest`.
 2. The web application within the container uses **port 80**. Depending on your setup, this port should be either directly published or aliased.
 3. There are two environment variables that need to be set:
