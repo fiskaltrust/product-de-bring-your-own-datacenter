@@ -22,7 +22,7 @@ This Endpoint can also be triggered several times sequential (e.g. in a bulk upd
 In a massive update scenario (all or the vast majority of cashboxes were rebuilded) it is possible to restart all BackendPODs by triggering a rolling restart. K8S will send the SIGTERM Signal to the affected POD so current requests should be completed properly.
 
 Example:
-```
+```sh
 kubectl config set-context --current --namespace=bring-your-own-datacenter 
 kubectl get deployments 
 kubectl rollout restart deployment byodc
