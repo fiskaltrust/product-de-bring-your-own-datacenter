@@ -48,7 +48,7 @@ The following settings are valid:
 | config     | storage/class    |                                                            |                                             Storage class to use for the PersistentVolumeClaim for the FCC volume                                             |
 | config     | storage/capacity |                            1Gi                             |                                                   Capacity of the PersistentVolumeClaim for the FCC volume                                                    |
 | config     | env              |                            null                            | An Array of environment variables (see https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#envvar-v1-core) which are added to the BackendPOD |
-| instances     |               |                            []                            | An Array of Fcc instances to host. Each entry needs to be a map with the following keys: `vtssId` and `vtssSecret` and an optional `storageCapacity`. see [here](how-to-fiscal-cloud-connector.md#ByoDC-configuration) |
+| instances     |               |                            []                            | An Array of Fcc instances to host. Each entry needs to be a map with the following keys: `vtssId` and `vtssSecret` and optionaly `storageCapacity` and `storageClass`. see [here](how-to-fiscal-cloud-connector.md#ByoDC-configuration) |
 
 <br><br>
 
