@@ -102,5 +102,8 @@ The API Explorer can be found at the `/swagger` endpoint and the OpenAPI definit
 ## Operations Reference
 Collection of OPS related topics and QnAs [here](OperationsReference.md)
 
+## Host FiscalCloudConnector instances in Bring your own Data Center
+Bring your own Data Center can be configured to host FiscalCloudConnector instances in kubernetes. More details can be found [here](how-to-fiscal-cloud-connector.md).
+
 ## Minimal installations
 In scenarios where only very few CashBoxes are operated and high availability is not a crucial factor, it's also possible to host a standalone instance of the BYODC container. More details can be found [here](howto-single-instance.md).

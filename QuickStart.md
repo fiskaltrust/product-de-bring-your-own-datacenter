@@ -40,7 +40,7 @@ helm install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --na
 If you would like to have a mysql container for easy testing, you can add a config setting before installing the HelmChart as follows:
 
 1.  Create a ```config.yaml``` file and add following content:
-```
+```yaml
 loadbalancer:
   config:
     tls:
