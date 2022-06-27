@@ -68,4 +68,4 @@ To do so the `FccUri` parameter needs to be set to `http://<FccId>` in the fiska
 The FCCs all have their own volume instead of a shared volume for all.\
 This is because having one shared volume would force all FCC instances to run on the same node. (Disk volumes can mostly only be used by a single node (use accessMode `ReadWriteOnce`))
 
-There is a [github discussion]() regarding this choice. Feel free to chime in and offer your thoughts/wishes there.
+There is a [github discussion](https://github.com/fiskaltrust/product-de-bring-your-own-datacenter/discussions/66) regarding this choice. Feel free to chime in and offer your thoughts/wishes there.
