@@ -88,6 +88,17 @@ helm uninstall bring-your-own-datacenter --namespace bring-your-own-datacenter
 kubectl delete namespace bring-your-own-datacenter
 ```
 
+## Supported Configurations
+
+## Queues
+
+* MySQL
+
+## SCUs
+
+* FiskalyCertified
+* [SwissbitCloud](#Host-FiscalCloudConnector-instances-in-Bring-your-own-Data-Center)
+
 ## Parameter Reference
 All Parameters and values you can use in "values.yaml" can be found [here](ParameterReference.md)
 
