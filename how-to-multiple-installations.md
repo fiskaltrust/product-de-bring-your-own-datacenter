@@ -20,6 +20,8 @@ agent:
   enabled: false
 ```
 
+> See [this github issue](https://github.com/emissary-ingress/emissary/issues/3380#issuecomment-1325429008) for background.
+
 You then need to install Emissary into all of the namespaces where you have byodc installations runnig:
 
 ```sh
