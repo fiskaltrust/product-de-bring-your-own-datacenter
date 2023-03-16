@@ -19,7 +19,7 @@ kubectl create namespace bring-your-own-datacenter
 
 ## 3.) Install Emissary Ingress
 
-Install Emissary Ingress v3.x using the [official installation instructions](https://www.getambassador.io/docs/emissary/latest/topics/install/helm).
+Install Emissary Ingress v3.x using the [official installation instructions](https://www.getambassador.io/docs/emissary/3.5/topics/install/helm).
 
 ## 4.) Add Helm Repo
 ```sh
