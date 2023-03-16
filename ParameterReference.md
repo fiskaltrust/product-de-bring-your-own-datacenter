@@ -72,4 +72,4 @@ The following settings are valid:
 | :--------- | :-------- | :-----------: | :-----------------------------------------------------------------------------------: |
 | use        |           |     true      |                     Deploys the emissary ingress custom resources                     |
 | tls        |           |     false     | If you want Emissary-ingress to use tls (cert configured in the loadbalancer section) |
-| hostname   |           |      *        |       If you want Emissary-ingress to only work outside of ByoDC, set to false        |
+| hostname   |           |      *        |                                                                                       |
