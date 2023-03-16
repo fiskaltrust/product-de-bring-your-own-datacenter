@@ -1,6 +1,6 @@
 # Installing ByoDC multiple times on the same cluster
 
-To do this you will also need to install Imissary Ingress multiple times directly into each of the byodc namespaces.
+To do this you will also need to install Emissary Ingress multiple times directly into each of the ByoDC namespaces.
 
 If you had previously installed Emissary Ingress on the cluster you may need to uninstall it before proceding.
 
