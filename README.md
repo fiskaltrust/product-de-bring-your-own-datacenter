@@ -118,3 +118,6 @@ Bring your own Data Center can be configured to host FiscalCloudConnector instan
 
 ## Minimal installations
 In scenarios where only very few CashBoxes are operated and high availability is not a crucial factor, it's also possible to host a standalone instance of the BYODC container. More details can be found [here](howto-single-instance.md).
+
+## Multiple installations in one cluster
+If you want to run multiple different ByoDC installations on the same cluster you will need to install the Emissary Ingress in both namespaces. More infos can be found [here](how-to-multiple-installations.md).

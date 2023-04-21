@@ -15,7 +15,7 @@ This document provides used IPs, Ports, URLs which are needed to operate ByoDC.
 | fiskaltrust portal sandbox | https://portal-sandbox.fiskaltrust.de | TCP | 443 |
 | fiskaltrust helmrepository | https://charts.fiskaltrust.cloud | TCP | 443 |
 | fiskaltrust helmrepository DEV | https://charts-dev.fiskaltrust.cloud | TCP | 443 |
-| github package/container registry | docker.pkg.github.com/fiskaltrust/product-de-bring-your-own-datacenter/signaturecloud-mysql-fiskaly | TCP | 443 |
+| github package/container registry | docker.pkg.github.com/fiskaltrust/product-de-bring-your-own-datacenter/byodc | TCP | 443 |
 | fiskly TSE | kassensichv.io | TCP | 443 |
 
 ---

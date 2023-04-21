@@ -50,10 +50,8 @@ If there is any text (e.g. Bag Attributes) outside of the `-----BEGIN ...-----` 
 
 You need to enable tls in the `config.yaml`.
 ```yaml
-ambassador: 
-  config: 
-    tls:
-      enabled: true
+emissary:
+  tls: true
 ```
 
 ## Deploy
@@ -65,20 +63,20 @@ You can either provide directly them in the `config.yaml` or as command line arg
 
 You can either provide the file contents as a base64 coded string:
 ```yaml
-ambassador: 
+loadbalancer: 
   config: 
     tls:
-      enabled: true
       crtBase64: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLQouCi4KLgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCgotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tCi4KLgouCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0KLgouCi4KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ==
       keyBase64: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQouCi4KLgotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQ==
+emissary:
+  tls: true
 ```
 
 Or you can provide the file contents directly:
 ```yaml
-ambassador: 
+loadbalancer: 
   config: 
     tls:
-      enabled: true
       crt: |
         -----BEGIN CERTIFICATE---
         .
@@ -103,6 +101,8 @@ ambassador:
         .
         .
         -----END RSA PRIVATE KEY-----
+emissary:
+  tls: true
 ```
 
 ### command line arguments
@@ -113,8 +113,8 @@ You can either provide the file contents as a base64 coded string using the `--s
 ```sh
 helm install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --namespace bring-your-own-datacenter \
   -f config.yaml \
-  --set ambassador.config.tls.crtBase64="LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLQouCi4KLgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCgotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tCi4KLgouCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0KLgouCi4KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ==" \
-  --set ambassador.config.tls.keyBase64="LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQouCi4KLgotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQ=="
+  --set loadbalancer.config.tls.crtBase64="LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLQouCi4KLgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCgotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tCi4KLgouCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0KLgouCi4KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ==" \
+  --set loadbalancer.config.tls.keyBase64="LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQouCi4KLgotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQ=="
 
 ```
 
@@ -122,7 +122,7 @@ Or you can provide the file path directly using the `--set-file` parameter:
 ```sh
 helm install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --namespace bring-your-own-datacenter \
   -f config.yaml \
-  --set-file ambassador.config.tls.crt="./crt.pem" \
-  --set-file ambassador.config.tls.key="./key.pem"
+  --set-file loadbalancer.config.tls.crt="./crt.pem" \
+  --set-file loadbalancer.config.tls.key="./key.pem"
 
 ```

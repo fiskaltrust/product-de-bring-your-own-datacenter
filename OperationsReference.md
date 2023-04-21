@@ -19,7 +19,7 @@ See our [Postmancollection](https://github.com/fiskaltrust/product-de-bring-your
 This Endpoint can also be triggered several times sequential (e.g. in a bulk update scenario)
 
 ### Restart of all Cashboxes
-In a massive update scenario (all or the vast majority of cashboxes were rebuilded) it is possible to restart all BackendPODs by triggering a rolling restart. K8S will send the SIGTERM Signal to the affected POD so current requests should be completed properly.
+In a massive update scenario (all or the vast majority of cashboxes were rebuilt) it is possible to restart all BackendPODs by triggering a rolling restart. K8S will send the SIGTERM Signal to the affected POD so current requests should be completed properly.
 
 Example:
 ```sh
@@ -34,7 +34,7 @@ fiskaltrust Middleware in ByoDC does not support local Logfiles.
 Usual logging practice in K8S environments is to handle logs via stdout/stderr.
 https://kubernetes.io/docs/concepts/cluster-administration/logging/#cluster-level-logging-architectures
 
-## Replace Emmisary-ingress (Abassador) Loadbalancer
+## Replace Emmisary-ingress Loadbalancer
 Emissary-ingress PODs are the default Loadbalancers for ByoDC. There is an important reason for that. For Backend PODs to work properly, it is essential that every cashbox is a singleton on the whole ByoDC cluster.  
 So we use _Header based Routing_ by the CashBoxId. If a cashbox is already existing on a BackendPOD, the load balancer routes this request always to the same BackendPOD (like a sticky session). If this Cashbox is not existing it will be created and gains a Redis Lock. In this case the cashbox loads its config from helipad, this may take some time.
 
