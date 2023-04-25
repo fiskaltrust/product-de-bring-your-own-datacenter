@@ -23,6 +23,10 @@ A brief step-by-step guide to get ByoDC up and running on your Docker Desktop ca
 
 ## Installation
 
+### Install Emissary Ingress
+
+Install emissary ingress v3.x. Please follow the [official installation instructions](https://www.getambassador.io/docs/emissary/3.5/topics/install/helm).
+
 ### Create Namespace
 
 Connect to your Kubernetes cluster and create the `bring-your-own-datacenter` namespace.
