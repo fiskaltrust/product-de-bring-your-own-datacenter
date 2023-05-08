@@ -25,7 +25,7 @@ A brief step-by-step guide to get ByoDC up and running on your Docker Desktop ca
 
 ### Install Emissary Ingress
 
-Install emissary ingress v3.x. Please follow the [official installation instructions](https://www.getambassador.io/docs/emissary/3.5/topics/install/helm).
+Install emissary ingress v3.x. Please follow the [official installation instructions](https://www.getambassador.io/docs/emissary/3.6/topics/install/helm).
 
 ### Create Namespace
 
