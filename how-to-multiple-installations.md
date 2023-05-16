@@ -1,5 +1,7 @@
 # Installing ByoDC multiple times on the same cluster
 
+If you want to run multiple ByoDC instances on one cluster each needs to run in their own namespace.
+
 To do this you will also need to install Emissary Ingress multiple times directly into each of the ByoDC namespaces.
 
 If you had previously installed Emissary Ingress on the cluster you may need to uninstall it before proceding.
