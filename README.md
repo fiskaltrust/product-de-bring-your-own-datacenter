@@ -14,7 +14,7 @@ fiskaltrust provides a "Backend POD" Docker image and Helm-Charts to deploy your
 
 ## Requirements
 
-* Kubernetes cluster > v1.16
+* Kubernetes cluster > v1.22
 * helm > v3.0
 * Network Connection Matrix and used IP Scopes can be found at [Network Requirements](NetworkRequirements.md)
 
