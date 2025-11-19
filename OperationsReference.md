@@ -63,21 +63,20 @@ You can call the `/api/version` endpoint on a BackendPOD to get the running Midd
 ### Update Deployment
 
 To Update your ByoDC Environment, take the following steps:
-1. Helm Chart was updated  
-  Update your repo to get the actual charts:
-  `helm repo update`  
-  Upgrade your deployment:  
-  `helm upgrade bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter -f config.yaml -n bring-your-own-datacenter`  
-  be aware that the variables may differ to your deployment
 
-2. BackendPOD Image was updated  
-  Restarting the deployment from our chart will pull the latest ByoDC BackendPOD Image with a compatible minor version:
-  `kubectl rollout restart deployment/byodc -n bring-your-own-datacenter`  
-  be aware that the variables may differ to your deployment  
-  > ***Note:** You can override this by setting the [`byodc.image.tag` Parameter](./ParameterReference.md#section-byodc) in your `config.yaml` to a specific version (e.g. `1.3.29-buster`).
+1. Middleware was updated:  
+   Set the [`byodc.image.tag` Parameter](./ParameterReference.md#section-byodc) in your `config.yaml` to the new version.
 
-3. Update Cashbox Versions in ft-portal *(Optional)*  
-  To align the used Software Version to ft-Portal Configuration, our Update Wizard may be used: [Portal Configuration Update Site](https://portal.fiskaltrust.de/UpdateConfiguration)  
-  A Description for Bulk updating Cashboxes can be found [here](https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/how-to/bulk-update-cashboxes) ("Restart the fiskaltrust.Middleware" section can be ignored)
+2. Optional: Helm Chart was updated  
+   Update your repo to get the updated charts:  
+   `helm repo update`
+
+4. Upgrade your deployment:  
+   `helm upgrade bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter -f config.yaml -n bring-your-own-datacenter`  
+   be aware that the variables may differ to your deployment
+
+5. Update Cashbox Versions in ft-portal *(Optional)*  
+   To align the used Software Version to ft-Portal Configuration, our Update Wizard may be used: [Portal Configuration Update Site](https://portal.fiskaltrust.de/UpdateConfiguration)  
+   A Description for Bulk updating Cashboxes can be found [here](https://docs.fiskaltrust.cloud/docs/posdealers/rollout-doc/how-to/bulk-update-cashboxes) ("Restart the fiskaltrust.Middleware" section can be ignored)
    
 
