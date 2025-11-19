@@ -71,7 +71,7 @@ To Update your ByoDC Environment, take the following steps:
    Update your repo to get the updated charts:  
    `helm repo update`
 
-4. Upgrade your deployment:  
+3. Upgrade your deployment:  
    `helm upgrade bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter -f config.yaml -n bring-your-own-datacenter`  
    be aware that the variables may differ to your deployment
 
