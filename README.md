@@ -60,6 +60,8 @@ helm show values fiskaltrust/bring-your-own-datacenter
 
 This will output a `values.yaml` file containing all of the default values. You can create a file `config.yaml` and override the values you need.
 
+> ***Note:** Please specify the version of the middleware you're using in the [`byodc.image.tag` Parameter](./ParameterReference.md#section-byodc) of the `config.yaml` and use this to update the middleware versions. You can find the [available versions here](https://github.com/fiskaltrust/product-de-bring-your-own-datacenter/pkgs/container/byodc).*
+
 ### Install chart
 
 You can install the chart like this:
@@ -68,7 +70,7 @@ You can install the chart like this:
 helm install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --namespace bring-your-own-datacenter -f config.yaml
 ```
 
-Leave out `-f config.yaml` to install it with default values.
+Leave out `-f config.yaml` to install it with default values. Be aware that this might use an older version of the middleware if you don't set the version explicitly.
 
 > ***Note:** If you use a local repo you will have to run `helm dependency update` before installing.*
 
@@ -83,7 +85,7 @@ helm repo update
 helm upgrade --install bring-your-own-datcenter fiskaltrust/bring-your-own-datacenter --namespace bring-your-own-datacenter -f config.yaml
 ```
 
-> ***Note:** The backend Pods will automatically update to the newest minor Middleware version. If this behaviour is not wanted you can set the [`byodc.image.tag` Parameter](./ParameterReference.md#section-byodc) in your `config.yaml` to a specific version (e.g. `1.3.29-buster`).
+> ***Note:** The helm chart does not need to be updated often. To update the middleware just update the tag in your `config.yaml` and redeploy that.*
 
 ## Uninstallation
 
